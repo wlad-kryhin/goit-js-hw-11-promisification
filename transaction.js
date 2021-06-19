@@ -40,3 +40,20 @@ const logSuccess = ({id,time}) => {
   makeTransaction({ id: 73, amount: 100 })
     .then(logSuccess)
     .catch(logError);
+
+
+
+
+
+    const toggleUserState = (allUsers, userName) => {
+    
+          const updatedUsers = allUsers.map((user) =>
+              user.name === userName ? { ...user, active: !user.active } : user
+          );
+  
+          return new Promise((resolve) => {
+          resolve(updatedUsers);
+          
+      });
+  };
+  
